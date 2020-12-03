@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<header>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slidepanel.css">
+    <link rel="stylesheet" href="css/treeview.css">
+</header>
+
+<body>
+    <section>
+        <div class="sTopline">
+            <a href="index.html">
+                <img src="image/cap2.png" class="sLogo">
+            </a>
+            <nav>
+                <menu class="sMenu">
+                    <li>
+                        <a href="index.html">Меню</a>
+                    </li>
+                    <li>
+                        <a href="index.html">Угадаем настроение</a>
+                    </li>
+                    <li>
+                        <a href="index.html">Наша история</a>
+                    </li>
+                    <li>
+                        <a href="index.html">Заказ</a>
+                    </li>
+                    <li>
+                        <a href="index.html">Вход</a>
+                    </li>
+                </menu>
+            </nav>
+        </div>
+    </section>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="treeview">
+            <ul>
+                <li>
+                    <div>
+                        <p>
+                            <a href="#" class="sc" onclick="return UnHide(this)">&#9660;</a>
+                            <a href="#">Меню</a>
+                        </p>
+                    </div>
+                    <ul>
+                        <li class="cl">
+                            <div>
+                                <p>
+                                    <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                                    <a href="#">Десерты</a>
+                                </p>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div>
+                                        <p>
+                                            <a href="#">Маковый торт</a>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <p>
+                                            <a href="#">Медово-сметанный торт</a>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <p>
+                                            <a href="#">Чизкейк</a>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="cl">
+                            <div>
+                                <p>
+                                    <a href="#" class="sc" onclick="return UnHide(this)">&#9658;</a>
+                                    <a href="#">Тартолетки</a>
+                                </p>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div>
+                                        <p>
+                                            <a href="#">Лимонный тарт</a>
+                                        </p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div>
+                                        <p>
+                                            <a href="#">Брусничный тарт</a>
+                                        </p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div>
+                                <p>
+                                    <a href="#">Сэндвичи</a>
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <p>
+                                    <a href="#">Чай</a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <button class="openbtn" onclick="openNav()">&#9776;</button>
+
+    <script type="text/javascript">
+        function UnHide(eThis) {
+            // if (eThis.innerHTML.charCodeAt(0) == 9658) {
+            if (eThis.parentNode.parentNode.parentNode.className == 'cl') {
+                //eThis.innerHTML = '&#9660;'
+                eThis.parentNode.parentNode.parentNode.className = '';
+            } else {
+                //eThis.innerHTML = '&#9658;'
+                eThis.parentNode.parentNode.parentNode.className = 'cl';
+            }
+            return false;
+        }
+        /* Установите ширину боковой панели на 250 пикселей (показать его) */
+        function openNav() {
+            document.getElementById("mySidepanel").style.width = "300px";
+        }
+
+        /* Установите ширину боковой панели в 0 (скройте ее) */
+        function closeNav() {
+            document.getElementById("mySidepanel").style.width = "0";
+        }
+    </script>
+</body>
