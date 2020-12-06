@@ -1,21 +1,29 @@
-from django.shortcuts import get_list_or_404, render
+from django.shortcuts import get_object_or_404, get_list_or_404, render
 from django.http import HttpResponse
 from tthapp.models import clMenuCategory, clMenuPos, clIngredient, clUnit, clIngrMenuPos
 #from tthapp.forms import SearchForm,StudentForm
 from django.db.models import Max
 from django.views.generic import DetailView,ListView
 from django.template import loader
+from django.views import View
 
-# Create your views here.
-def index(request):
-    menucategory_list = clMenuCategory.objects.all()
-    context = {'menucategory_list' : menucategory_list }
-    return render(request,'index.html',context)
+# Используем CBV (вью на классах)
+class clMainView(ListView):
+    model = clMenuCategory
+    context_object_name = 'menucategory_list'
+    template_name = 'index.html'
 
-def menucategory(request, category_id):
-    # Получаем объект текущей категории
-    c = clMenuCategory.objects.get(pk=category_id)
-    # Получаем список позиций меню в текущй категории
-    menupos_list = get_list_or_404(clMenuPos, menucategory=c)
-    context = {'menupos_list' : menupos_list }
-    return render(request,'menu.html',context)
+class clMenuView(ListView):
+    context_object_name = 'menupos_list'
+    template_name       = 'menu.html'
+
+    # Фильтрация списка позиций меню по категории
+    def get_queryset(self):
+        self.clMenuCategory = get_object_or_404(clMenuCategory, id=self.kwargs['category_id'])
+        return clMenuPos.objects.filter(menucategory=self.clMenuCategory)
+
+    # Добавление дополнительного контента
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['menucategory_list'] = clMenuCategory.objects.all()
+        return context

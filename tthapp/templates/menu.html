@@ -7,15 +7,15 @@
 <div class="container">
     <div class="row row-cols-1 row-cols-md-3">
         {% for menupos in menupos_list %}
-        <div class="col mb-4">
-            <div class="card h-100">
-                <img src={{menupos.get_image_url}} class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{ menupos.name }}</h5>
-                    <p class="card-text">{{ menupos.descr }}</p>
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <img src={{menupos.get_image_url}} class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ menupos.name }}</h5>
+                        <p class="card-text">{{ menupos.descr }}</p>
+                    </div>
                 </div>
             </div>
-        </div>
         {% endfor %}
     </div>
 </div>
