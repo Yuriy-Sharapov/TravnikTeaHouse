@@ -52,4 +52,4 @@ class clIngrMenuPos(models.Model):
 
     # Отображение названия объекта
     def __str__(self):
-      return self.ingredient.name + " " + str(self.weight) + ", " + self.unit.name
+      return self.menupos.name + ": " + self.ingredient.name + " " + str(self.weight) + ", " + self.unit.name
