@@ -32,13 +32,13 @@ REQUEST_TIME_DELAY=1
 # Application definition
 
 INSTALLED_APPS = [
+    'tthapp.apps.TthappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'tthapp'
+    'django.contrib.staticfiles'
 ]
 
 MIDDLEWARE = [
