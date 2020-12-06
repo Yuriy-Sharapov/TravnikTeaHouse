@@ -14,10 +14,6 @@ class clMenuCategory(models.Model):
     def __str__(self):
       return self.name
 
-    # Получаем полную ссылку для перехода к странице категории
-    def get_absolute_url(self):
-        return "/tthapp/menucategory/" + str(self.id) + "/"
-
 fs = FileSystemStorage(location='/static/image')
 
 ### Позиция меню

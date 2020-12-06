@@ -85,7 +85,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 {% for menucategory in menucategory_list %}
-                                    <a class="dropdown-item" href={{menucategory.get_absolute_url}}>{{menucategory.name}}</a>
+                                    <a class="dropdown-item" href="{% url 'menucategory' menucategory.id %}">{{menucategory.name}}</a>
                                 {% endfor %}
 <!--                                <a class="dropdown-item" href="/tthapp/menucategory/1">Десерты</a>-->
 <!--                                <a class="dropdown-item" href="/tthapp/menucategory/2">Тартолетки</a>-->
