@@ -19,7 +19,7 @@ class clMenuPos(models.Model):
     cost         = models.IntegerField(verbose_name="Цена",default=0)
     weight       = models.IntegerField(verbose_name="Масса",default=0)
     caloric      = models.IntegerField(verbose_name="Калорийность",default=0)
-    img          = models.CharField(verbose_name="Картинка",max_length=200,blank=True)
+    img          = models.ImageField(verbose_name="Картинка",upload_to="../static/image", height_field=200, width_field=200, max_length=200, blank=True)
 
     # Отображение названия объекта
     def __str__(self):
