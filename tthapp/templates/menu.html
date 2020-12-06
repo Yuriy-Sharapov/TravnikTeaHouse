@@ -130,42 +130,44 @@
 <!--        <button class="openbtn" onclick="openNav()">&#9776;</button>-->
 
         <div class="row row-cols-1 row-cols-md-3">
+            {% for menupos in menupos_list %}
             <div class="col mb-4">
                 <div class="card h-100">
-                    <img src="../static/image/poppycake.jpg" class="card-img-top" alt="...">
+                    <img src={{ menupos.img.path }} class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Маковый торт</h5>
-                        <p class="card-text">Очень вкусный маковый торт</p>
+                        <h5 class="card-title">{{ menupos.name }}</h5>
+                        <p class="card-text">{{ menupos.descr }}</p>
                     </div>
                 </div>
             </div>
-            <div class="col mb-4">
-                <div class="card h-100">
-                    <img src="../static/image/cheesecake.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Чизкейк</h5>
-                        <p class="card-text">This is a short card.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card h-100">
-                    <img src="../static/image/honeycake.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Медово-сметанный торт</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card h-100">
-                    <img src="../static/image/honeycake.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Медово-сметанный торт</h5>
-                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
+<!--            <div class="col mb-4">-->
+<!--                <div class="card h-100">-->
+<!--                    <img src="../static/image/cheesecake.jpg" class="card-img-top" alt="...">-->
+<!--                    <div class="card-body">-->
+<!--                        <h5 class="card-title">Чизкейк</h5>-->
+<!--                        <p class="card-text">This is a short card.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col mb-4">-->
+<!--                <div class="card h-100">-->
+<!--                    <img src="../static/image/honeycake.jpg" class="card-img-top" alt="...">-->
+<!--                    <div class="card-body">-->
+<!--                        <h5 class="card-title">Медово-сметанный торт</h5>-->
+<!--                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col mb-4">-->
+<!--                <div class="card h-100">-->
+<!--                    <img src="../static/image/honeycake.jpg" class="card-img-top" alt="...">-->
+<!--                    <div class="card-body">-->
+<!--                        <h5 class="card-title">Медово-сметанный торт</h5>-->
+<!--                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </div>
 
