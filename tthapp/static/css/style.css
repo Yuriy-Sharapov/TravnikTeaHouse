@@ -1,0 +1,72 @@
+/* Логотип */
+.sLogo{
+    height: 50px;
+}
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl.mycontainer{
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+/* Верхняя панель */
+.sTopline{
+    background-color: #095410;
+
+    /*height: 50px;*/
+}
+nav.sTopline{
+    background-color: #095410
+}
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link.sTopline{
+    color: white;
+    font-weight: bold;
+}
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link.sTopline{
+    color: white;
+    /*font-weight: bold;*/
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link.sTopline{
+    color: white;
+    font-weight: bold;
+}
+
+.sUpTopline svg + a{
+    color: black;
+    display: inline;
+}
+
+.sUpTopline div > svg{
+    font-size: 30px;
+    color: #095410;
+}
+
+.form-control.sSearshField{
+    border-top-left-radius: 25px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 25px;
+}
+
+.btn.sSearshButton{
+    border-top-left-radius: 0px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 0px;
+}
+
+/* Список элементов меню */
+ul.sFooter{
+    list-style-type: none;
+    display: inline;
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+}
+/* Элемент списка меню */
+ul.sFooter li{
+    display: inline;
+    padding-right: 40px;
+    text-transform: uppercase;
+}
+/* Ссылка в элементе списка меню */
+ul.sFooter li a{
+    text-decoration: none;
+    color: white;
+}
