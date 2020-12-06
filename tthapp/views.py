@@ -21,3 +21,9 @@ class clMenuView(ListView):
     def get_queryset(self):
         self.clMenuCategory = get_object_or_404(clMenuCategory, id=self.kwargs['category_id'])
         return clMenuPos.objects.filter(menucategory=self.clMenuCategory)
+
+    # Добавление дополнительного контента
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['menucategory_list'] = clMenuCategory.objects.all()
+        return context
