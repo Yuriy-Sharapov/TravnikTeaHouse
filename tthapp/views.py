@@ -8,16 +8,14 @@ from django.template import loader
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    menucategory_list = clMenuCategory.objects.all()
+    context = {'menucategory_list' : menucategory_list }
+    return render(request,'index.html',context)
 
 def menucategory(request, category_id):
     # Получаем объект текущей категории
     c = clMenuCategory.objects.get(pk=category_id)
     # Получаем список позиций меню в текущй категории
     menupos_list = get_list_or_404(clMenuPos, menucategory=c)
-    #try:
-    #    menupos_list = clMenuPos.objects.filter(menucategory=c)
     context = {'menupos_list' : menupos_list }
-    #except clMenuPos.DoesNotExist:
-    #    raise Http404("Question does not exist")
     return render(request,'menu.html',context)

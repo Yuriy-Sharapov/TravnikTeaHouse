@@ -3,6 +3,8 @@ import datetime
 from django.db import models
 from django.utils import timezone
 from django.core.files.storage import FileSystemStorage
+from django.urls import reverse
+from django.conf import settings
 
 ### Категория меню
 class clMenuCategory(models.Model):
@@ -11,6 +13,10 @@ class clMenuCategory(models.Model):
     # Отображение названия объекта
     def __str__(self):
       return self.name
+
+    # Получаем полную ссылку для перехода к странице категории
+    def get_absolute_url(self):
+        return "/tthapp/menucategory/" + str(self.id) + "/"
 
 fs = FileSystemStorage(location='/static/image')
 
@@ -25,6 +31,8 @@ class clMenuPos(models.Model):
     img          = models.ImageField(verbose_name="Картинка",upload_to=fs, blank=True)
     #img          = models.ImageField(verbose_name="Картинка",upload_to="../static/image", height_field=200, width_field=200, max_length=200, blank=True)
 
+    def get_image_url(self):
+        return settings.STATIC_URL + "image/" + self.img.name
     # Отображение названия объекта
     def __str__(self):
       return self.name
