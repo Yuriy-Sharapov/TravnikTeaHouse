@@ -31,7 +31,8 @@ class clMenuPos(models.Model):
         return settings.STATIC_URL + "image/" + self.img.name
     # Отображение названия объекта
     def __str__(self):
-      return self.name
+        return self.name
+      #return self.menucategory.name + ": " + self.name
 
 ### Ингредиент
 class clIngredient(models.Model):
