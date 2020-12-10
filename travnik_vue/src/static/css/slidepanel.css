@@ -1,0 +1,68 @@
+/* Меню боковой панели */
+
+.sidepanel {
+    height: 1000px;
+    /* Укажите высоту */
+    width: 0;
+    /* 0 ширина-измените это с помощью JavaScript */
+    position: fixed;
+    /* Оставаться на месте */
+    z-index: 1;
+    /* Оставайтесь на вершине */
+    top: 57px;
+    left: 0;
+    background-color: #619D79;
+    /* Черный */
+    overflow-x: hidden;
+    /* Отключить горизонтальную прокрутку */
+    padding-top: 60px;
+    /* Поместите содержимое 60px сверху */
+    transition: 0.5s;
+    /* 0.5 секунды эффект перехода для скольжения в боковой панели */
+}
+
+
+/* Боковая панель ссылок */
+
+.sidepanel a {
+    padding: 10px 8px 10px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+
+
+/* При наведении курсора мыши на навигационные ссылки измените их цвет */
+
+.sidepanel a:hover {
+    color: #f1f1f1;
+}
+
+
+/* Положение и стиль кнопки закрытия (верхний правый угол) */
+
+.sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+
+/* Стиль кнопка, которая используется для открытия боковой панели */
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #095410;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #444;
+}

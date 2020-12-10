@@ -29,6 +29,7 @@ class clMenuPos(models.Model):
 
     def get_image_url(self):
         return settings.STATIC_URL + "image/" + self.img.name
+
     # Отображение названия объекта
     def __str__(self):
         return self.name
