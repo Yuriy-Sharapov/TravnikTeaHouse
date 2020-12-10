@@ -1,1 +1,3 @@
 /travnik_vue/node_modules/
+/travnik_vue/src/plugins/axios.js
+/travnik_vue/src/plugins/bootstrap-vue.js
