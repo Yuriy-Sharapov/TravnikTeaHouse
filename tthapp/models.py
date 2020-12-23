@@ -36,7 +36,7 @@ class clMenuPos(models.Model):
       #return self.menucategory.name + ": " + self.name
 
 ### Ингредиент
-class clIngredient(models.Model):
+class clIngredient(models.Model):    
     name         = models.CharField(verbose_name="Ингредиент", max_length=200)
     cost         = models.IntegerField(verbose_name="Цена закупки",default=0)
     caloric      = models.IntegerField(verbose_name="Калорийность",default=0)
